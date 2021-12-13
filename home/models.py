@@ -18,3 +18,11 @@ class Course(models.Model):
 
     def __str__(self):
         return self.course_name
+
+
+class CourseModule(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    course_module_name = models.CharField(max_length=100)
+    course_description = RichTextField()
+    video_url = models.URLField(max_length=500)
+    can_view = models.BooleanField(default=False)
