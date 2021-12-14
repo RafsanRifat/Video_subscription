@@ -9,7 +9,7 @@ class Course(models.Model):
     course_name = models.CharField(max_length=200)
     course_description = RichTextField()
     is_premium = models.BooleanField(default=False)
-    course_image = models.ImageField(upload_to='course.png')
+    course_image = models.ImageField(upload_to='course')
     slug = models.SlugField(blank=True)
 
     def save(self, *args, **kwargs):
