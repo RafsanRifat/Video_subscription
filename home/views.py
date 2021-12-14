@@ -5,6 +5,6 @@ from .models import *
 # Create your views here.
 
 def home(request):
-    course = Course.objects.all()
-    context = {'course': course}
+    courses = Course.objects.all()
+    context = {'courses': courses}
     return render(request, 'home.html', context)
