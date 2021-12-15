@@ -27,11 +27,12 @@ def become_pro(request):
             amount = 3500
         stripe.api_key = "sk_test_51Jqx0YFIYgM5uAssYim24tC1MHJt9BEKUoapvNuEeImHofsaFdLOzziWfkgUFiruTmZ5lBF4Mp1R1VOMBUJaeca400RA9BNYxm"
         customer = stripe.Customer.create(
-            email=request.user.email
+            email=request.user.email,
+            source=request.POST['stripeToken']
         )
         charge = stripe.Charge.create(
             customer=customer,
-            amount=amount*100,
+            amount=amount * 100,
             currency='BDT',
             description='membership'
         )

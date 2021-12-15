@@ -3,6 +3,8 @@
 {% block content %}
     <script src="https://js.stripe.com/v3/"></script>
 
+    
+
 
     <div class="container">
         <div class="row mt-5">
@@ -11,7 +13,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda autem consectetur earum
                     error minima nam perferendis provident, quo similique.</p>
 
-                <form action="" method="post">
+                <form action="" method="post" id="payment-form">
                     {% csrf_token %}
 
                     <div class="form-group">
@@ -22,7 +24,7 @@
                             <option value="YEARLY">YEARLY -3000/-</option>
                         </select>
                     </div>
-                    <div class="form-row">
+                    <div class="">
                         <label for="card-element">
                             Credit or debit card
                         </label>
