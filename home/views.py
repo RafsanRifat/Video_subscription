@@ -29,4 +29,10 @@ def become_pro(request):
         customer = stripe.Customer.create(
             email=request.user.email
         )
+        charge = stripe.Charge.create(
+            customer=customer,
+            amount=amount*100,
+            currency='BDT',
+            description='membership'
+        )
     return render(request, 'become_pro.html')
