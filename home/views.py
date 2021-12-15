@@ -16,3 +16,8 @@ def view_course(request, slug):
 
     context = {'course': course, 'course_module': course_module}
     return render(request, 'course.html', context)
+
+
+
+def become_pro(request):
+    return render(request, 'become_pro.html')
