@@ -5,4 +5,5 @@ from .views import *
 
 urlpatterns = [
     path('', home),
+    path('course/<slug>/', view_course, name="course"),
 ]

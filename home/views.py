@@ -11,8 +11,8 @@ def home(request):
 
 
 def view_course(request, slug):
-    course = Course.objects.filter(slug = slug).first()
-    course_module = CourseModule.objects.filter(course = course)
+    course = Course.objects.filter(slug=slug).first()
+    course_module = CourseModule.objects.filter(course=course)
 
-    context = {'course': course, 'course_module': course_module }
+    context = {'course': course, 'course_module': course_module}
     return render(request, 'course.html', context)
