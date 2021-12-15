@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import *
+import stripe
 
 
 # Create your views here.
@@ -18,6 +19,14 @@ def view_course(request, slug):
     return render(request, 'course.html', context)
 
 
-
 def become_pro(request):
+    if request.method == 'POST':
+        membership = request.POST.get('membership', 'MONTHLY')
+        amount = 1000
+        if membership == 'YEARLY':
+            amount = 3500
+        stripe.api_key = "sk_test_51Jqx0YFIYgM5uAssYim24tC1MHJt9BEKUoapvNuEeImHofsaFdLOzziWfkgUFiruTmZ5lBF4Mp1R1VOMBUJaeca400RA9BNYxm"
+        customer = stripe.Customer.create(
+            email=request.user.email
+        )
     return render(request, 'become_pro.html')
