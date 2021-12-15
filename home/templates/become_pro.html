@@ -2,5 +2,29 @@
 
 {% block content %}
 
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <h3>Why become pro?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus assumenda autem consectetur earum error minima nam perferendis provident, quo similique.</p>
+
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label>Membership type</label>
+                        <select name="membership" class="form-control" id="">
+                            <option>Choose</option>
+                            <option value="MONTHLY">MONTHLY -1000/-</option>
+                            <option value="YEARLY">YEARLY -3000/-</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.indianexpress.com/2020/04/online759.jpg" alt="" class="img-responsive">
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
